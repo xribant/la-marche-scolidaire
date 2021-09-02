@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La marche scolidaire - Contact{% endblock %}
+
+{% block section %}
+
+    <!--/ Intro Single star /-->
+    <section class="intro-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="title-single-box">
+                        <h1 class="title-single">Contactez nous</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ Intro Single End /-->
+
+    <!--/ Contact Star /-->
+    <section class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-md-7">
+                            {{ form_start(newForm, {'attr': {'novalidate': 'novalidate'}}) }}
+                            {{ form_row(newForm._token) }}
+                            <form class="form-a contactForm" action="" method="post" role="form">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-group">
+                                            {{ form_row(newForm.name) }}
+                                            <div class="validation"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-group">
+                                            {{ form_row(newForm.email) }}
+                                            <div class="validation"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <div class="form-group">
+                                            {{ form_row(newForm.subject) }}
+                                            <div class="validation"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <div class="form-group">
+                                            {{ form_row(newForm.message) }}
+                                            <div class="validation"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <div class="form-group">
+                                            {{ form_row(newForm.robot) }}
+                                            <div class="validation"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-a">Envoyer</button>
+                                    </div>
+                                </div>
+                            </form>
+                            {{ form_end(newForm) }}
+                        </div>
+                        <div class="col-md-5 section-md-t3">
+                            <div class="icon-box section-b2">
+                                <div class="icon-box-icon">
+                                    <span class="ion-ios-paper-plane"></span>
+                                </div>
+                                <div class="icon-box-content table-cell">
+                                    <div class="icon-box-title">
+                                        <h4 class="icon-title">Nous écrire</h4>
+                                    </div>
+                                    <div class="icon-box-content">
+                                        <p class="mb-1">Email.
+                                            <span class="color-a">info@lamarchescolidaire.be</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="icon-box">
+                                <div class="icon-box-icon">
+                                    <span class="ion-ios-redo"></span>
+                                </div>
+                                <div class="icon-box-content table-cell">
+                                    <div class="icon-box-title">
+                                        <h4 class="icon-title">Réseaux sociaux</h4>
+                                    </div>
+                                    <div class="icon-box-content">
+                                        <div class="socials-footer">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="link-one">
+                                                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ Contact End /-->
+
+{% endblock %}
+
+

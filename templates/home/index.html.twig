@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La marche scolidaire - Accueil{% endblock %}
+
+{% block section %}
+    <!--/ Carousel Star /-->
+    <div class="intro intro-carousel">
+        <div id="carousel" class="owl-carousel owl-theme">
+            <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/wallonie-foret.jpeg)">
+                <div class="overlay overlay-a"></div>
+                <div class="intro-content display-table">
+                    <div class="table-cell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="intro-body">
+                                        <h1 class="intro-title mb-4">
+                                            <span class="color-b">100 Km</span>
+                                            <br> 24 Ecoles
+                                            <br>
+                                            <span class="color-b"> 1 Entité</span></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/huppaye.jpg)">
+                <div class="overlay overlay-a"></div>
+                <div class="intro-content display-table">
+                    <div class="table-cell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="intro-body">
+                                        <h1 class="intro-title mb-4">
+                                            <span class="color-b">Jour 1</span> 41 Km
+                                            <br> Huppaye
+                                            <br>
+                                            <span class="color-b"> Perwez</span></h1>
+                                        <p class="intro-subtitle intro-price">
+                                            <a href="{{ path('road_map_day1') }}"><span class="price-a">Le tracé</span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/gentinnes.jpg)">
+                <div class="overlay overlay-a"></div>
+                <div class="intro-content display-table">
+                    <div class="table-cell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="intro-body">
+                                        <h1 class="intro-title mb-4">
+                                            <span class="color-b">Jour 2</span> 33 Km
+                                            <br> Gentinnes
+                                            <br>
+                                            <span class="color-b"> Court-Saint-Etienne</span>
+                                        </h1>
+                                        <p class="intro-subtitle intro-price">
+                                            <a href="{{ path('road_map_day2') }}"><span class="price-a">Le tracé</span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/court-saint-etienne.jpg)">
+                <div class="overlay overlay-a"></div>
+                <div class="intro-content display-table">
+                    <div class="table-cell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="intro-body">
+                                        <h1 class="intro-title mb-4">
+                                            <span class="color-b">Jour 3</span> 25 Km
+                                            <br> Court-Saint-Etienne
+                                            <br>
+                                            <span class="color-b"> Sart-Dames-Avelines</span>
+                                        </h1>
+                                        <p class="intro-subtitle intro-price">
+                                            <a href="{{ path('road_map_day3') }}"><span class="price-a">Le tracé</span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ Carousel end /-->
+    {{ dump(id)}}
+    <section class="intro-single" id="sponsors">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="title-single-box">
+                        <h1 class="title-single">Nos sponsors</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-sm d-flex justify-content-center">
+                <a href="https://www.runattitude.be" target="_blank" alt=""><img class="sponsor" src="{{ asset('img/logo_run_attitude.png') }}"></a>
+            </div>
+            <div class="col-sm d-flex justify-content-center mt-xs-5">
+                <a href="http://www.estate-immo.be" target="_blank" alt=""><img class="sponsor" src="{{ asset('img/logo_estate_immo.png') }}"></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

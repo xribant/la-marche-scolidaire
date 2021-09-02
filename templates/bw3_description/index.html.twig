@@ -1,0 +1,600 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La marche scolidaire - BW3 Qu'est ce que c'est ?{% endblock %}
+
+{% block section %}
+    <!--/ Intro Single star /-->
+    <section class="intro-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="title-single-box">
+                        <h1 class="title-single">L'entité BW3</h1>
+                        <span class="color-text-a">Qu'est-ce que c'est?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ Intro Single End /-->
+
+    <!--/ Agent Single Star /-->
+    <section class="agent-single" id="ecoles">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-md-8 section-md-t3">
+                            <div class="agent-info-box">
+                                <div class="agent-content mb-3">
+                                    <p class="content-d color-text-a">
+                                        Ce sont 24 écoles (fondamentales, primaires, maternelles
+                                        autonomes ou spécialisées) de l’enseignement libre catholique
+                                        situées dans le Sud-Est du Brabant wallon (zone bleue).
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="agent-avatar-box">
+                                <img src="{{ asset('img/bw3_map.png') }}" alt="" class="agent-avatar img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-12 mt-5">
+                    <div class="card-header-c d-flex">
+                        <div class="card-box-ico">
+                            <i class="fas fa-graduation-cap fa-4x" style="color: #000;"></i>
+                        </div>
+                        <div class="card-title-c align-self-center">
+                            <h2 class="title-c">Les écoles</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="new-carousel" class="owl-carousel owl-theme">
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/saint-jean-genappe.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://www.ecolesaintjeangenappe.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="blog-single.html">Ecole Saint-Jean
+                                        <br> Genappe</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue de Bruxelles 91 
+                                    <br>1470 Genappe</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/petit-chemin-loupoigne.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="http://www.ecoledupetitchemin.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="http://www.ecoledupetitchemin.be/" target="_blank">Ecole du petit chemin
+                                        <br> Loupoigne</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Chemin de la Waronche, 18
+                                    <br>1471 Loupoigne</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/sainte-marie-bousval.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="#" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="#">Ecole Sainte-Marie
+                                        <br> Bousval</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Avenue des Combattants, 62
+                                    <br>1470 Bousval</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/saint-nicolas-sart.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="http://www.e-s-n.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="http://www.e-s-n.be/" target="_blanck">Ecole Saint-Nicolas
+                                        <br> Sart-Dames-Avelines</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue du Try, 9
+                                    <br>1495 Sart-Dames-Avelines</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/notre-dame-ceroux.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://ecolenotredamecerouxmousty.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://ecolenotredamecerouxmousty.be/" target="_blank">Ecole Notre-Dame
+                                        <br> Céroux-Mousty</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Avenue des Iris, 14
+                                    <br>1341 Céroux-Mousty</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/saint-pie-ottignies.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://www.ecolestpiex.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://www.ecolestpiex.be/" target="_blank">Ecole Saint-Pie-X
+                                        <br> Ottignies</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Avenue St-Pie X, 5
+                                    <br>1340 Ottignies</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/ecole-escale-ottignies.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="http://www.ecole-escale.be" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="http://www.ecole-escale.be" target="_blank">Ecole Escale
+                                        <br> Ottignies</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue du Blanc Ry, 52
+                                    <br>1340 Ottignies</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/escalpade-lln.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://www.escalpade.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://www.escalpade.be/" target="_blank">Ecole Escalpade
+                                        <br> Louvain-La-Neuve</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue de la Ferme des Bruyères, 2
+                                    <br>1348 Louvain-la-Neuve</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/martin-5-lln.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://www.martinv.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://www.martinv.be/" target="_blank">Ecole fondamentale Martin V
+                                        <br> Louvain-La-Neuve</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Boulevard du Nord, 2
+                                    <br>1348 Louvain-la-Neuve</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/college-biereau-lln.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://www.biereau.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://www.biereau.be/" target="_blank">Collège du Biéreau
+                                        <br> Louvain-La-Neuve</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue du Collège, 2
+                                    <br>1348 Louvain-la-Neuve</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/college-saint-etienne-court.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://www.cste-fond.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://www.cste-fond.be/" target="_blank">Collège Saint-Etienne
+                                        <br> Court-Saint-Etienne</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Avenue des Prisonniers de Guerre, 42
+                                    <br>1490 Court-St-Etienne</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/notre-dame-hayeffes.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://www.indh.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://www.indh.be/" target="_blank">Institut Notre-Dame des Hayeffes
+                                        <br> Mont-Saint-Guibert</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue des Hayeffes, 31
+                                    <br>1435 Mont-Saint-Guibert</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/chardons-chastre.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="http://www.acis-group.org/institutions/483/accueil.php" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="http://www.acis-group.org/institutions/483/accueil.php" target="_blank">Ecole les Chardons
+                                        <br> Chastre</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue des Acacias, 4
+                                    <br>1450 Chastre</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/notre-dame-cortil.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://www.ecolematernellecortil.be/Ecole_maternelle_Notre-Dame_Cortil-Noirmont/Accueil.html" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://www.ecolematernellecortil.be/Ecole_maternelle_Notre-Dame_Cortil-Noirmont/Accueil.html" target="_blank">Ecole maternelle Notre-Dame
+                                        <br> Cortil-Noirmont</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue Octave Lotin, 9
+                                    <br>1450 Cortil-Noirmont</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/petite-ecole-gentinnes.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="http://www.petiteecole.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="http://www.petiteecole.be/" target="_blank">La petite école
+                                        <br> Gentinnes</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue des Maïeurs, 4
+                                    <br>B-1450 Chastre</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/ma-petite-ecole-maleve.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://www.ma-petite-ecole.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://www.ma-petite-ecole.be/" target="_blank">Ma petite école
+                                        <br> Malèves</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue de l’Eglise , 3
+                                    <br>1360 Malèves-Ste-Marie-Wastines</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/ecole-jean-paul-perwez.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://jp2.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://jp2.be/" target="_blank">Ecole Jean-Paul II
+                                        <br> Perwez</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue Lepage, 17
+                                    <br>1360 Perwez</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/notre-dame-melin.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="http://www.ecole-notre-dame-melin.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="http://www.ecole-notre-dame-melin.be/" target="_blank">Ecole maternelle Notre-Dame
+                                        <br> Mélin</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue des Beaux Prés, 9
+                                    <br>1370 Mélin</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/institut-providence-jodoigne.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="http://www.providence-jodoigne.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="http://www.providence-jodoigne.be/" target="_blank">Institut de la Providence
+                                        <br> Jodoigne</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue Sergent Sortet, 21
+                                    <br>1370 Jodoigne</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/saint-jean-baptiste-huppaye.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="https://saint-jean-baptiste.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="https://saint-jean-baptiste.be/" target="_blank">Ecole Saint Jean-Baptiste
+                                        <br> Huppaye</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue des Combattants et Déportés, 9
+                                    <br>1367 Huppaye</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/saint-martin-jauche.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="http://www.ecolesaintmartin.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="http://www.ecolesaintmartin.be/" target="_blank">Ecole Saint-Martin
+                                        <br> Jauche</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue de l’Hupeau, 9
+                                    <br>1350 Jauche</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item-c">
+                    <div class="card-box-b card-shadow news-box">
+                        <div class="img-box-b">
+                            <img src="{{ asset('img/saint-joseph-orp.jpg') }}" alt="" class="img-b img-fluid">
+                        </div>
+                        <div class="card-overlay">
+                            <div class="card-header-b">
+                                <div class="card-category-b">
+                                    <a href="http://www.stjosephorp.be/" target="_blank" class="category-b"><i class="fa fa-chevron-up"></i></a>
+                                </div>
+                                <div class="card-title-b">
+                                    <h2 class="title-2">
+                                        <a href="http://www.stjosephorp.be/" target="_blank">Ecole Saint-Joseph
+                                        <br> Orp-Le-Grand</a>
+                                    </h2>
+                                </div>
+                                <div class="card-date">
+                                    <span class="date-b">Rue Emile Vandervelde, 9
+                                    <br>1350 Orp-le-Grand</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+     
+
+
+{% endblock %}
+
