@@ -42,6 +42,18 @@
 		autoplayHoverPause: true
 	});
 
+	$('.logo-slider').owlCarousel({
+		loop: true,
+		smartSpeed: 1000,
+		center: true,
+		autoWidth: false,
+		autoHeight: false,
+		autoplay: true,
+		autoplayHoverPause: true,
+		nav: false,
+		items: 1
+	});
+
 	/*--/ Animate Carousel /--*/
 	$('.intro-carousel').on('translate.owl.carousel', function () {
 		$('.intro-content .intro-title').removeClass('zoomIn animated').hide();

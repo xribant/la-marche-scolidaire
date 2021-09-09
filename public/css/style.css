@@ -33,9 +33,26 @@ a:hover {
   text-decoration: none;
 }
 
+.alert.alert-server {
+  position:fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index:9999;
+  border-radius:0px;
+}
+
 .sponsor {
-  transition: transform .8s;
-  box-shadow: 0 0 0 1px rgb(0 0 0 / 20%);
+  max-width: 100%;
+}
+
+.owl-carousel .owl-stage {
+  display: flex;
+}
+
+.owl-carousel .owl-item img {
+  width: auto;
+  height: 100%;
 }
 
 .charte {
@@ -45,8 +62,8 @@ a:hover {
 }
 
 .sponsor:hover {
-  -ms-transform: scale(1.1); /* IE 9 */
-  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
   transform: scale(1.1);
   transition: all 200ms ease-out;
 }

@@ -6,18 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/")
- */
-class HomeController extends AbstractController
+class GalleryController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/gallery", name="gallery")
      */
     public function index(): Response
     {
-        return $this->render('home/index.html.twig', [
-            'activeMenu' => 'home'
+        return $this->render('gallery/index.html.twig', [
+            'activeMenu' => 'photos',
         ]);
     }
 }

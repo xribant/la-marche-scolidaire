@@ -4,8 +4,10 @@
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+        <meta content="La Marche Scolidaire, BW3, marche, scolidaire, solidarité, entité, brabant-wallon, écoles, biereau, louvain-la-neuve" name="keywords">
+        <meta content="La Marche Scolidaire des 1, 2 et 3 Octobre 2021. La Marche Scolidaire BW3 ou quand quelques directeurs randonneurs mettent leur passion au profit d’un projet solidaire pour les
+        écoles de leur entité… 100km, 3 jours, 24 écoles du Brabant-Wallon." name="description">
+        <meta content="Xavier Ribant" name="author">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
 
@@ -41,8 +43,12 @@
 
     <body>
         {% block body %}
-            <div class="click-closed"></div>
-            <div class="alert alert-success">Votre message a bien été envoyé !</div>
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success alert-server" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <span class="d-flex justify-content-center">{{ message|raw }}</span>
+                </div>
+            {% endfor %}
             <!--/ Nav Start /-->
             <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
                 <div class="container">
@@ -83,10 +89,10 @@
                                 <a class="nav-link {% if activeMenu == 'contact' %}active{% endif %}" href="{{ path('contact_form') }}">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if activeMenu == 'photos' %}active{% endif %}" href="#">Photos</a>
+                                <a class="nav-link {% if activeMenu == 'photos' %}active{% endif %}" href="{{ path('gallery') }}">Photos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if activeMenu == 'livre-or' %}active{% endif %}" href="#">Livre d'or</a>
+                                <a class="nav-link {% if activeMenu == 'guestbook' %}active{% endif %}" href="{{ path('guestbook') }}">Livre d'or</a>
                             </li>
                         </ul>
                     </div>
@@ -130,6 +136,12 @@
                                                 <i class="fa fa-angle-right"></i> <a href="{{ path('project_description') }}">Le projet</a>
                                             </li>
                                             <li class="item-list-a">
+                                                <i class="fa fa-angle-right"></i> <a href="{{ path('gallery') }}">Photos</a>
+                                            </li>
+                                            <li class="item-list-a">
+                                                <i class="fa fa-angle-right"></i> <a href="{{ path('guestbook') }}">Livre d'or</a>
+                                            </li>
+                                            <li class="item-list-a">
                                                 <i class="fa fa-angle-right"></i> <a href="{{ path('road_map_day1') }}">Vendredi 1er Octobre</a>
                                             </li>
                                             <li class="item-list-a">
@@ -167,16 +179,14 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="copyright-footer">
+                            <div class="copyright-footer d-flex align-items-baseline justify-content-center">
                                 <p class="copyright color-text-a">
-                                    Tous droits réservés. <span class="color-a">&copy; 2021 BW3 La Marche Scolidaire</span>
+                                    Tous droits réservés. <span class="color-a">&copy; 2021 <img src="{{ asset('img/logo-bw3.png') }}" style="height: 20px;"> La Marche Scolidaire</span>
                                 </p>
                             </div>
-                            <!-- 
                             <div class="d-flex flex-row justify-content-center" style="font-size: 10px; color: #000">
-                                Conception du site : www.xr-concept.be 
+                                <a href="https://www.xr-concept.be"> www.xr-concept.be</a>
                             </div>
-                            -->    
                         </div>
                     </div>
                 </div>
@@ -201,6 +211,8 @@
 
             <!-- Template Main Javascript File -->
             <script src="{{ asset('js/main.js') }}"></script>
+
+
         {% endblock %}
 
     </body>

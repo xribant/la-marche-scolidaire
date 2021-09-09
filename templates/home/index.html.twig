@@ -100,7 +100,8 @@
         </div>
     </div>
     <!--/ Carousel end /-->
-    {{ dump(id)}}
+
+    <!--/ Sponsors /-->
     <section class="intro-single" id="sponsors">
         <div class="container">
             <div class="row">
@@ -111,15 +112,19 @@
                 </div>
             </div>
         </div>
-    </section>
-    <div class="container">
-        <div class="row mt-2">
-            <div class="col-sm d-flex justify-content-center">
-                <a href="https://www.runattitude.be" target="_blank" alt=""><img class="sponsor" src="{{ asset('img/logo_run_attitude.png') }}"></a>
-            </div>
-            <div class="col-sm d-flex justify-content-center mt-xs-5">
-                <a href="http://www.estate-immo.be" target="_blank" alt=""><img class="sponsor" src="{{ asset('img/logo_estate_immo.png') }}"></a>
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col-md-12 col-lg-12">
+                    <div class="owl-carousel logo-slider">
+                        <a href="https://www.runattitude.be" target="_blank" alt=""><img class="sponsor" src="{{ asset('img/logo_run_attitude.png') }}"></a>
+                        <a href="http://www.estate-immo.be" target="_blank" alt=""><img class="sponsor" src="{{ asset('img/logo_estate_immo.png') }}"></a>
+                        <a href="https://www.b-travel.be/" target="_blank" alt=""><img class="sponsor" src="{{ asset('img/logo-b-travel.png') }}"></a>
+                        <a href="#" target="_blank" alt=""><img class="sponsor" src="{{ asset('img/logo-xr-concept.png') }}"></a>
+                        <a href="https://www.brasseriedesfourquets.be/" target="_blank" alt=""><img class="sponsor" src="{{ asset('img/logo-fourquets.png') }}"></a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- End of Sponsors -->
 {% endblock %}
