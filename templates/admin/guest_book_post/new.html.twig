@@ -1,0 +1,29 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}La Marche Scolidaire | Admin | Livre d'or{% endblock %}
+
+{% block content %}
+
+    <section class="intro-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="title-single-box">
+                        <h1 class="title-single">Ajouter un post au livre d'or</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="agent-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    {{ include('admin/guest_book_post/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

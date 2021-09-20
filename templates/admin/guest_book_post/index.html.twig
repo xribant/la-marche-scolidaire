@@ -1,0 +1,67 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}La Marche Scolidaire | Admin | Livre d'or{% endblock %}
+
+{% block content %}
+
+<section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <h1 class="title-single">Posts du livre d'or</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="agent-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Auteur</th>
+                        <th>Status</th>
+                        <th>Créé le</th>
+                        <th>Modifié le</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        {% for guest_book_post in guest_book_posts %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ guest_book_post.author }}</td>
+                                <td>{{ guest_book_post.checked ? '<span class="badge bg-success">Approuvé</span>' : '<span class="badge bg-warning text-dark">En attente</span>' }}</td>
+                                <td>{{ guest_book_post.createdAt ? guest_book_post.createdAt|format_datetime('medium', 'medium',locale='fr') }}</td>
+                                <td>{{ guest_book_post.updatedAt ? guest_book_post.updatedAt|format_datetime('medium', 'medium',locale='fr') }}</td>
+                                <td class="d-flex align-items-center justify-content-center">
+                                    <a class="btn btn-sm btn-success mr-2" title="Modifier" href="{{ path('guest_book_post_edit', {'id': guest_book_post.id}) }}"><i class="fas fa-edit"></i></a>
+                                    {% if guest_book_post.checked %}
+                                        <a class="btn btn-sm btn-danger mr-2" title="Rejeter" href="{{ path('guest_book_post_reject', {'id': guest_book_post.id}) }}"><i class="fas fa-times"></i></a>
+                                    {% else %}
+                                        <a class="btn btn-sm btn-success mr-2" title="Approuver" href="{{ path('guest_book_post_approve', {'id': guest_book_post.id}) }}"><i class="fas fa-check"></i></a>
+                                    {% endif %}
+                                    <form method="post" action="{{ path('guest_book_post_delete', {'id': guest_book_post.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer ce post?');">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ guest_book_post.id) }}">
+                                        <button class="btn btn-sm btn-danger" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="7">Pas de posts</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a class="btn btn-sm btn-primary" href="{{ path('guest_book_post_new') }}">Créer un post</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

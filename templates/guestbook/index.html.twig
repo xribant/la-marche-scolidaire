@@ -10,7 +10,7 @@
                 <div class="col-md-12 col-lg-12">
                     <div class="title-single-box">
                         <h1 class="title-single">Livre d'or</h1>
-                        <span class="color-text-a">Laissez-nous un petit mot...</span>
+                        <a class="btn btn-sm btn-success" href="{{ path('guestbook_post') }}"><i class="fas fa-thumbtack mr-1"></i> Poster un petit mot</a>
                     </div>
                 </div>
             </div>
@@ -25,12 +25,30 @@
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-md-12 section-md-t3">
-                            <div class="agent-info-box">
-                                <div class="agent-content mb-3">
-                                    <p class="content-d color-text-a">
-                                        🚨  Coming very very soon...  🚨
-                                    </p>
-                                </div>
+                            <div id="guestbook-carousel" class="owl-carousel">
+                                {% for post in allpost %}
+                                    <!-- CAROUSEL ITEM -->
+                                    <div class="item shadow-lg">
+                                        <div class="p-4 bg-white rounded">
+                                            <img src="https://annedece.sirv.com/Images/earth.png" alt="">
+                                            <div class="commo pt-3">
+                                                <img src="{{ asset('img/quote.png') }}" alt="">
+                                            </div>
+                                            <p class="mb-4 text-muted">
+                                                {{ post.message }}
+                                            </p>
+                                            <hr>
+                                            <div class="d-flex align-items-center">
+                                                <div>
+                                                    <h6 class="m-0 float-left font-weight-bold" style="color: #2eca6a;">
+                                                        {{ post.author }}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END OF CAROUSEL ITEM -->
+                                {% endfor %}
+
                             </div>
                         </div>
                     </div>

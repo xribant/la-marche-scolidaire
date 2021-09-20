@@ -1,6 +1,6 @@
 (function ($) {
   "use strict";
-  
+
   // Preloader
   $(window).on('load', function () {
     if ($('#preloader').length) {
@@ -22,7 +22,7 @@
     $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
     return false;
   });
-  
+
 	var nav = $('nav');
 	var navHeight = nav.outerHeight();
 
@@ -115,7 +115,7 @@
 	/*--/ Property owl owl /--*/
 	$('#property-single-carousel').owlCarousel({
 		loop: true,
-		margin: 0,  
+		margin: 0,
 		nav: true,
 		navText: ['<i class="ion-ios-arrow-back" aria-hidden="true"></i>', '<i class="ion-ios-arrow-forward" aria-hidden="true"></i>'],
 		responsive: {
@@ -130,7 +130,7 @@
 		loop: true,
 		margin: 30,
 		responsive: {
-			0: {  
+			0: {
 				items: 1,
 			},
 			769: {
@@ -158,5 +158,27 @@
 			}
 		}
 	});
+
+    $('#guestbook-carousel').owlCarousel({
+        loop: true,
+        center: true,
+        margin:-38,
+        dots:true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        smartSpeed: 450,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            1170: {
+                items: 3
+            }
+        }
+    });
+
 
 })(jQuery);

@@ -1657,6 +1657,7 @@ footer .credits {
   letter-spacing: .05rem;
 }
 
+
 .btn.btn-a {
   background-color: #000000;
   color: #ffffff;
@@ -2057,6 +2058,14 @@ footer .credits {
 @media (max-width: 575px) {
   .box-collapse .title-box-d {
     left: 35px;
+  }
+
+  .brand-logo {
+    display: none;
+  }
+
+  .text-brand {
+    font-size: 1.5rem;
   }
 
   .box-collapse .title-box-d .title-d {

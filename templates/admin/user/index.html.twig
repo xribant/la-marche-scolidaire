@@ -1,0 +1,65 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}La Marche Scolidaire | Admin | Utilisateurs{% endblock %}
+
+{% block content %}
+
+    <section class="intro-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="title-single-box">
+                        <h1 class="title-single">Utilisateurs</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="agent-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Email</th>
+                            <th>Roles</th>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Créé le</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in users %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                                <td>{{ user.firstName }}</td>
+                                <td>{{ user.lastName }}</td>
+                                <td>{{ user.createdAt ? user.createdAt|format_datetime('medium', 'medium',locale='fr') }}</td>
+                                <td class="d-flex align-items-center justify-content-center">
+                                    <a class="btn btn-sm btn-success mr-2" href="{{ path('user_edit', {'id': user.id}) }}">Modifier</a>
+                                    <form method="post" action="{{ path('user_delete', {'id': user.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer cet utilisateur?');">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                                        <button class="btn btn-sm btn-danger">Supprimer</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="9">no records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <a class="btn btn-sm btn-primary" href="{{ path('user_new') }}">Créer un utilisateur</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

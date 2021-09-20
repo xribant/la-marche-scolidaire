@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GuestBookPost{% endblock %}
+
+{% block body %}
+    <h1>GuestBookPost</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ guest_book_post.id }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ guest_book_post.author }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ guest_book_post.message }}</td>
+            </tr>
+            <tr>
+                <th>Checked</th>
+                <td>{{ guest_book_post.checked ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ guest_book_post.createdAt ? guest_book_post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated_at</th>
+                <td>{{ guest_book_post.updatedAt ? guest_book_post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('guest_book_post_index') }}">back to list</a>
+
+    <a href="{{ path('guest_book_post_edit', {'id': guest_book_post.id}) }}">edit</a>
+
+    {{ include('guest_book_post/_delete_form.html.twig') }}
+{% endblock %}

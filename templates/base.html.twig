@@ -37,6 +37,7 @@
 
             <!-- Main Stylesheet File -->
             <link href="/css/style.css" rel="stylesheet">
+            <link href="/css/guestbook-carousel.css" rel="stylesheet">
         {% endblock %}
 
     </head>
@@ -58,7 +59,7 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('img/logo-bw3_marche_scolidaire_2021.png') }}"></a>
+                    <a class="navbar-brand" href="{{ path('home') }}"><img class="brand-logo" src="{{ asset('img/logo-bw3_marche_scolidaire_2021.png') }}" alt=""></a>
                     <a class="navbar-brand text-brand" href="{{ path('home') }}"> La Marche<span class="color-b"> Scolidaire</span></a>
                     <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
                         <ul class="navbar-nav">
@@ -185,7 +186,7 @@
                                 </p>
                             </div>
                             <div class="d-flex flex-row justify-content-center" style="font-size: 10px; color: #000">
-                                <a href="https://www.xr-concept.be"> www.xr-concept.be</a>
+                                Website réalisé par <a href="https://www.xr-concept.be" class="ml-1" target="_blank"> www.xr-concept.be</a>
                             </div>
                         </div>
                     </div>
