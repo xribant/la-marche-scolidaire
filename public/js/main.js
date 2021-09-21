@@ -42,18 +42,6 @@
 		autoplayHoverPause: true
 	});
 
-	$('.logo-slider').owlCarousel({
-		loop: true,
-		smartSpeed: 1000,
-		center: true,
-		autoWidth: false,
-		autoHeight: false,
-		autoplay: true,
-		autoplayHoverPause: true,
-		nav: false,
-		items: 1
-	});
-
 	/*--/ Animate Carousel /--*/
 	$('.intro-carousel').on('translate.owl.carousel', function () {
 		$('.intro-content .intro-title').removeClass('zoomIn animated').hide();
@@ -165,7 +153,7 @@
         margin:-38,
         dots:true,
         autoplay: true,
-        autoplayTimeout: 5000,
+        autoplayTimeout: 8000,
         smartSpeed: 450,
         responsive: {
             0: {
@@ -179,6 +167,27 @@
             }
         }
     });
+
+	$('#sponsor-carousel').owlCarousel({
+		loop: true,
+		center: true,
+		margin:-38,
+		dots:true,
+		autoplay: true,
+		autoplayTimeout: 8000,
+		smartSpeed: 450,
+		responsive: {
+			0: {
+				items: 1
+			},
+			768: {
+				items: 2
+			},
+			1170: {
+				items: 3
+			}
+		}
+	});
 
 
 })(jQuery);

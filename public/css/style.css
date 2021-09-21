@@ -42,10 +42,6 @@ a:hover {
   border-radius:0px;
 }
 
-.sponsor {
-  max-width: 100%;
-}
-
 .owl-carousel .owl-stage {
   display: flex;
 }
@@ -2017,6 +2013,10 @@ footer .credits {
 
   .section-md-t3 {
     padding-top: 3rem;
+  }
+
+  .section-md-t3-guestbook {
+    padding-top: 1rem;
   }
 
   .section-tb85 {

@@ -22,31 +22,33 @@
     <section class="agent-single" id="guestbook">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12 col-lg-12">
                     <div class="row">
-                        <div class="col-md-12 section-md-t3">
+                        <div class="col-md-12 section-md-t3-guestbook">
                             <div id="guestbook-carousel" class="owl-carousel">
                                 {% for post in allpost %}
-                                    <!-- CAROUSEL ITEM -->
-                                    <div class="item shadow-lg">
-                                        <div class="p-4 bg-white rounded">
-                                            <img src="https://annedece.sirv.com/Images/earth.png" alt="">
-                                            <div class="commo pt-3">
-                                                <img src="{{ asset('img/quote.png') }}" alt="">
-                                            </div>
-                                            <p class="mb-4 text-muted">
-                                                {{ post.message }}
-                                            </p>
-                                            <hr>
-                                            <div class="d-flex align-items-center">
-                                                <div>
-                                                    <h6 class="m-0 float-left font-weight-bold" style="color: #2eca6a;">
-                                                        {{ post.author }}</h6>
+                                    {% if post.checked %}
+                                        <!-- CAROUSEL ITEM -->
+                                        <div class="item shadow-lg">
+                                            <div class="p-4 bg-white rounded">
+                                                <img src="https://annedece.sirv.com/Images/earth.png" alt="">
+                                                <div class="commo pt-3">
+                                                    <img src="{{ asset('img/quote.png') }}" alt="">
+                                                </div>
+                                                <p class="mb-4 text-muted">
+                                                    {{ post.message }}
+                                                </p>
+                                                <hr>
+                                                <div class="d-flex align-items-center">
+                                                    <div>
+                                                        <h6 class="m-0 float-left font-weight-bold" style="color: #2eca6a;">
+                                                            {{ post.author }}</h6>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!--END OF CAROUSEL ITEM -->
+                                        <!--END OF CAROUSEL ITEM -->
+                                    {% endif %}
                                 {% endfor %}
 
                             </div>
