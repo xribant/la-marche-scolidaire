@@ -35,6 +35,9 @@
             <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
             <link href="/css/toastr.min.css" rel="stylesheet">
 
+            <!-- Cookie Consent CSS file -->
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
             <!-- Main Stylesheet File -->
             <link href="/css/style.css" rel="stylesheet">
             <link href="/css/guestbook-carousel.css" rel="stylesheet">
@@ -199,6 +202,7 @@
         {% endblock %}
 
         {% block javascripts %}
+
             <!-- JavaScript Libraries -->
             <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
             <script src="{{ asset('lib/jquery/jquery-migrate.min.js') }}"></script>
@@ -215,7 +219,29 @@
             <!-- Template Main Javascript File -->
             <script src="{{ asset('js/main.js') }}"></script>
 
-
+            <!-- Cookie Consent JS Script -->
+            <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+            <script>
+                window.cookieconsent.initialise({
+                    "palette": {
+                        "popup": {
+                            "background": "#0f0101"
+                        },
+                        "button": {
+                            "background": "#2eca6a"
+                        }
+                    },
+                    "position": "bottom-left",
+                    "type": "opt-out",
+                    "content": {
+                        "message": "Nous utilisons des cookies sur ce site dans le seul but de connaître la provenance de nos visiteurs et rien d'autre!",
+                        "dismiss": "J'ai compris",
+                        "deny": "Je refuse",
+                        "allow": "Ok pour moi",
+                        "link": "Qu'est ce qu'un cookie?"
+                    }
+                });
+            </script>
         {% endblock %}
 
     </body>
