@@ -45,6 +45,7 @@
 
     <body>
         {% block body %}
+            <span class="alert-server">{{ flasher_render() }}</span>
             {% for message in app.flashes('success') %}
                 <div class="alert alert-success alert-server" role="alert">
                     <button type="button" class="close" data-dismiss="alert">×</button>

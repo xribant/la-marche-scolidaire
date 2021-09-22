@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\ContactForm;
 use App\Form\ContactFormType;
+use Flasher\Prime\FlasherInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,7 @@ class ContactFormController extends AbstractController
     /**
      * @Route("/contact", name="contact_form")
      */
-    public function index(Request $request, MailerInterface $mailer): Response
+    public function index(Request $request, MailerInterface $mailer, FlasherInterface $flasher): Response
     {
         $contactForm = new ContactForm();
 
@@ -43,7 +44,10 @@ class ContactFormController extends AbstractController
 
             $mailer->send($email);
 
-            $this->addFlash('success', 'Votre message a bien été envoyé');
+            $builder = $flasher->type('success')
+                ->message('Votre message nous est bien parvenu. Nous y répondrons dans les plus brefs délais.')
+                ->option('timer', 8000);
+            $builder->flash();
             $entityManager->flush();
 
             return $this->redirectToRoute('home');

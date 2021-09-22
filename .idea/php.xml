@@ -133,6 +133,10 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
+      <path value="$PROJECT_DIR$/vendor/php-flasher/flasher-toastr" />
+      <path value="$PROJECT_DIR$/vendor/php-flasher/flasher-toastr-symfony" />
+      <path value="$PROJECT_DIR$/vendor/php-flasher/flasher-symfony" />
+      <path value="$PROJECT_DIR$/vendor/php-flasher/flasher" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
