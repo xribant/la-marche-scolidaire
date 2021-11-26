@@ -10,6 +10,7 @@
         "doctrine/doctrine-bundle": "^2.4",
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.9",
+        "liip/imagine-bundle": "^2.6",
         "php-flasher/flasher-toastr-symfony": "^0.5.0",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^5.1",
@@ -38,7 +39,8 @@
         "twbs/bootstrap": "^5.1",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/intl-extra": "^3.3",
-        "twig/twig": "^2.12|^3.0"
+        "twig/twig": "^2.12|^3.0",
+        "vich/uploader-bundle": "^1.18"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.4",

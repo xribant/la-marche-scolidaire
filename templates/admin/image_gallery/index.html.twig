@@ -1,0 +1,45 @@
+{% extends 'admin/admin_base.html.twig' %}
+
+{% block title %}La Marche Scolidaire | Admin | Photos{% endblock %}
+
+{% block content %}
+
+    <section class="intro-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="title-single-box">
+                        <h1 class="title-single">Gestion des photos</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="agent-single">
+        <div class="container">
+            <div class="row">
+                <div class="grid-container">
+                    {% for picture in pictures %}
+                        <div class="grid-item">
+                            <div class="img-container">
+                                <img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('gallery_thumb') }}" alt="">
+                                <div class="overlay d-flex align-items-center justify-content-center">
+                                    <form method="post" action="{{ path('image_gallery_delete', {'id': picture.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer cette image?');">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ picture.id) }}">
+                                        <button class="btn btn-outline-danger" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <span class="mt-5">Pas de d'images</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row">
+                <a class="btn btn-sm btn-primary mt-3" href="{{ path('image_gallery_new') }}">Charger des images</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

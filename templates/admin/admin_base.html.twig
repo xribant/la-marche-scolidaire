@@ -31,6 +31,7 @@
 
         <!-- Main Stylesheet File -->
         <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/gallery.css" rel="stylesheet">
     {% endblock %}
 
 </head>
@@ -59,7 +60,7 @@
                         <a class="nav-link" href="{{ path('guest_book_post_index') }}">Posts du livre d'or</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Photos</a>
+                        <a class="nav-link" href="{{ path('image_gallery_index') }}">Photos</a>
                     </li>
                 </ul>
             </div>

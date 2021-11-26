@@ -35,6 +35,11 @@
             <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
             <link href="/css/toastr.min.css" rel="stylesheet">
 
+            <!-- Light Gallery -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.3.0-beta.2/css/lightgallery.min.css" integrity="sha512-LeCCaxc1iF2UArsp3NWiOAz1mSLXFXmuiOm2n8gxOSnCXIltE27/NV9yGshWgHSCKNigfDiJUskpRiithdGc3A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.3.0-beta.2/css/lg-zoom.min.css" integrity="sha512-SGo05yQXwPFKXE+GtWCn7J4OZQBaQIakZSxQSqUyVWqO0TAv3gaF/Vox1FmG4IyXJWDwu/lXzXqPOnfX1va0+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.3.0-beta.2/css/lg-thumbnail.min.css" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALiKfe8u1gjvWEEGEtoR6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
             <!-- Cookie Consent CSS file -->
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
@@ -43,6 +48,22 @@
             <link href="/css/guestbook-carousel.css" rel="stylesheet">
             <link href="/css/sponsor-carousel.css" rel="stylesheet">
         {% endblock %}
+
+        <!-- Matomo
+        <script>
+            var _paq = window._paq = window._paq || [];
+            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u="//matomo.lamarchescolidaire.be/";
+                _paq.push(['setTrackerUrl', u+'matomo.php']);
+                _paq.push(['setSiteId', '1']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            })();
+        </script>
+          End Matomo Code -->
 
     </head>
 
@@ -221,6 +242,11 @@
 
             <!-- Cookie Consent JS Script -->
             <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+
+            <!-- Light Gallery JS -->
+            <link type="text/css" rel="stylesheet" href="{{ asset('css/lightgallery-bundle.min.css') }}" />
+            <script src="{{ asset('js/lightGallery.js') }}"></script>
+
             <script>
                 window.cookieconsent.initialise({
                     "palette": {
