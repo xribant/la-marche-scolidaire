@@ -5,7 +5,7 @@ liip_imagine:
 
     filter_sets:
         cache: ~
-        gallery_thumb:
+        gallery_image:
             quality: 75
             filters:
-                thumbnail: { size: [ 300, 300 ], mode: outbound }
+                thumbnail: { size: [ 252, 352 ], mode: outbound }

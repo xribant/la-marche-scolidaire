@@ -2,12 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Picture;
+use App\Entity\ImageGallery;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ImageGalleryType extends AbstractType
 {
@@ -15,20 +15,20 @@ class ImageGalleryType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'required' => false,
                 'label' => false,
+                'required' => true,
                 'attr' => [
-                    'placeholder' => 'Titre',
+                    'placeholder' => 'Titre de la galerie',
                     'class' => 'form-control form-control-lg form-control-a'
                 ]
             ])
-            ->add('imageFile', VichImageType::class, [
-                'required' => true,
+            ->add('images', FileType::class, [
                 'label' => false,
-                'allow_delete' => true,
-                'delete_label' => 'Supprimer',
+                'multiple' => true,
+                'required' => false,
+                'mapped' => false,
                 'attr' => [
-                    'placeholder' => 'jpeg/png Max 2Mb',
+                    'placeholder' => 'Uploader des images',
                     'class' => 'form-control form-control-lg form-control-a'
                 ]
             ])
@@ -38,7 +38,7 @@ class ImageGalleryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Picture::class,
+            'data_class' => ImageGallery::class,
         ]);
     }
 }

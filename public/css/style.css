@@ -111,6 +111,31 @@ a:hover {
   margin-left: 5px;
 }
 
+.gallery-item {
+  color: red;
+  font-size: 3rem;
+  vertical-align: middle;
+  height: 200px;
+  width: 300px;
+}
+
+.gallery-item a {
+  color: red;
+  font-size: 3rem;
+}
+
+.gallery-item a:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+/*------ Front Gallery --------*/
+
+.front-gallery-item {
+  width: 400px;
+  padding: 5px;
+}
+
 .text-brand {
   color: #000000;
   font-size: 1.5rem;
@@ -136,6 +161,7 @@ a:hover {
 .no-margin {
   margin: 0;
 }
+
 
 /*------/ Nav Pills  /------*/
 

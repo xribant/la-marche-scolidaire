@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-12">
                     <div class="title-single-box">
-                        <h1 class="title-single">Galerie Photos</h1>
+                        <h1 class="title-single">Galeries Photos</h1>
                     </div>
                 </div>
             </div>
@@ -20,27 +20,25 @@
     <!--/ Agent Single Star /-->
     <section class="agent-single" id="photos">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="row">
-                        <div class="col-md-12 section-md-t3">
-                            <div class="agent-info-box">
-                                <div class="agent-content mb-3">
-                                    <div id="imageGallery">
-                                            <a href="{{ asset('img/logo-bw3.png') }}" data-lg-size="1600-2400">
-                                                <img alt=".." src="{{ asset('img/logo-b-travel.png') }}" />
-                                            </a>
-                                            <a href="{{ asset('img/4-directeurs-mer.jpg') }}" data-lg-size="1024-800">
-                                                <img alt=".." src="{{ asset('img/4-directeurs-mer.jpg') }}" />
-                                            </a>
-                                    </div>
+            {% for gallery in galeries %}
+                <h2 class="title-single m-3">{{ gallery.title }}</h2>
+                    <div class="container-sm">
+                        <div class="row justify-content-center">
+                            <div class="col col-md-10">
+                                <div class="gallery-container d-flex align-items-center justify-content-center" id="front-gallery">
+                                    {% for image in gallery.pictures %}
+                                        <a data-lg-size="1600-1067" class="front-gallery-item" data-src="{{ asset('/uploads/images/galleryItems/' ~ image.name) }}">
+                                            <img alt="" class="img-fluid" src="{{ asset('/uploads/images/galleryItems/' ~ image.name) }}" />
+                                        </a>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
+
 {% endblock %}
+

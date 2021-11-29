@@ -23,105 +23,44 @@ class Picture
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Merci de donner un titre à l'image")
      */
-    private $title;
+    private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @var string
+     * @ORM\ManyToOne(targetEntity=ImageGallery::class, inversedBy="pictures")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $image;
-
-    /**
-     * @Vich\UploadableField(mapping="gallery_images", fileNameProperty="image")
-     * @Assert\NotBlank(message="Veuillez sélectionner une image")
-     * @var File
-     */
-    private $imageFile;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $created_at;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $update_at;
+    private $gallery;
 
 
-    public function __construct() {
-        $this->created_at = new \DateTime();
-        $this->updated_at = new \DateTime();
-    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getName(): ?string
     {
-        return $this->title;
+        return $this->name;
     }
 
-    public function setTitle(string $title): self
+    public function setName(string $name): self
     {
-        $this->title = $title;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function setImageFile(File $image = null)
+    public function getGallery(): ?ImageGallery
     {
-        $this->imageFile = $image;
-
-        // VERY IMPORTANT:
-        // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event listeners won't be called and the file is lost
-        if ($image) {
-            // if 'updatedAt' is not defined in your entity, use another property
-            $this->updated_at = new \DateTime('now');
-        }
+        return $this->gallery;
     }
 
-    public function getImageFile()
+    public function setGallery(?ImageGallery $gallery): self
     {
-        return $this->imageFile;
-    }
-
-    public function setImage($image)
-    {
-        $this->image = $image;
-    }
-
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->created_at;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $created_at): self
-    {
-        $this->created_at = $created_at;
+        $this->gallery = $gallery;
 
         return $this;
     }
 
-    public function getUpdateAt(): ?\DateTimeInterface
-    {
-        return $this->update_at;
-    }
-
-    public function setUpdateAt(\DateTimeInterface $update_at): self
-    {
-        $this->update_at = $update_at;
-
-        return $this;
-    }
 }

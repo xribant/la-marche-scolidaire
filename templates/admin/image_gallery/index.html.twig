@@ -1,6 +1,6 @@
 {% extends 'admin/admin_base.html.twig' %}
 
-{% block title %}La Marche Scolidaire | Admin | Photos{% endblock %}
+{% block title %}La Marche Scolidaire | Admin | Galeries et Photos{% endblock %}
 
 {% block content %}
 
@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
-                        <h1 class="title-single">Gestion des photos</h1>
+                        <h1 class="title-single">Galeries</h1>
                     </div>
                 </div>
             </div>
@@ -19,27 +19,43 @@
     <section class="agent-single">
         <div class="container">
             <div class="row">
-                <div class="grid-container">
-                    {% for picture in pictures %}
-                        <div class="grid-item">
-                            <div class="img-container">
-                                <img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('gallery_thumb') }}" alt="">
-                                <div class="overlay d-flex align-items-center justify-content-center">
-                                    <form method="post" action="{{ path('image_gallery_delete', {'id': picture.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer cette image?');">
-                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ picture.id) }}">
-                                        <button class="btn btn-outline-danger" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
+                <div class="col-sm-12">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Titre</th>
+                            <th>Photos</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for gallery in image_galleries %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ gallery.title }}</td>
+                                <td>
+                                    {{ gallery.pictures|length }}
+                                </td>
+                                <td class="d-flex justify-content-start">
+                                    <a class="btn btn-sm btn-primary mr-2" href="{{ path('gallery_edit', {'id': gallery.id}) }}">Modifier</a>
+                                    <form method="post" action="{{ path('gallery_delete', {'id': gallery.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer cette galerie?');">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ gallery.id) }}">
+                                        <button class="btn btn-sm btn-danger">Supprimer</button>
                                     </form>
-                                </div>
-                            </div>
-                        </div>
-                    {% else %}
-                        <span class="mt-5">Pas de d'images</span>
-                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="9">Aucune galerie pour le moment</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <a class="btn btn-sm btn-primary" href="{{ path('gallery_new') }}">Créer une galerie</a>
                 </div>
-            </div>
-            <div class="row">
-                <a class="btn btn-sm btn-primary mt-3" href="{{ path('image_gallery_new') }}">Charger des images</a>
             </div>
         </div>
     </section>
+
 {% endblock %}
