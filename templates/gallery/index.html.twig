@@ -21,24 +21,45 @@
     <section class="agent-single" id="photos">
         <div class="container">
             {% for gallery in galeries %}
-                <h2 class="title-single m-3">{{ gallery.title }}</h2>
-                    <div class="container-sm">
-                        <div class="row justify-content-center">
-                            <div class="col col-md-10">
-                                <div class="gallery-container d-flex align-items-center justify-content-center" id="front-gallery">
-                                    {% for image in gallery.pictures %}
-                                        <a data-lg-size="1600-1067" class="front-gallery-item" data-src="{{ asset('/uploads/images/galleryItems/' ~ image.name) }}">
-                                            <img alt="" class="img-fluid" src="{{ asset('/uploads/images/galleryItems/' ~ image.name) }}" />
-                                        </a>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="front-gallery" id="gallery-{{ loop.index }}">
+                        <h3 class="title-single mb-1 mt-3">{{ gallery.title }}</h3>
+                        <span class="pl-3 mb-3">{{ gallery.description|raw }}</span>
+                        {% for image in gallery.pictures %}
+                            <img src="{{asset('/uploads/images/galleryItems/' ~ image.name) }}" alt="" style="height: 252px;" />
+                        {% endfor %}
                     </div>
+                </div>
             {% endfor %}
         </div>
     </section>
 
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        {% for gallery in galeries %}
+            const $gallery{{ loop.index }} = document.getElementById("gallery-{{ loop.index }}");
+
+            const gallery{{ loop.index }} = window.lightGallery($gallery{{ loop.index }}, {
+                dynamic: true,
+                plugins: [lgZoom, lgVideo, lgThumbnail],
+                dynamicEl: [
+                    {% for image in gallery.pictures %}
+                    {
+                        src: "{{asset('/uploads/images/galleryItems/' ~ image.name) }}",
+                        thumb: "{{asset('/uploads/images/galleryItems/' ~ image.name) }}",
+                        subHtml: ``
+                    },
+                    {% endfor %}
+                ]
+            });
+
+            $gallery{{ loop.index }}.addEventListener("click", () => {
+                gallery{{ loop.index }}.openGallery(0);
+            });
+        {% endfor %}
+    </script>
 
 {% endblock %}
 

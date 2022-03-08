@@ -115,13 +115,12 @@ a:hover {
   color: red;
   font-size: 3rem;
   vertical-align: middle;
-  height: 200px;
-  width: 300px;
+  width: 252px;
 }
 
 .gallery-item a {
   color: red;
-  font-size: 3rem;
+  font-size: 1rem;
 }
 
 .gallery-item a:hover {
@@ -131,9 +130,10 @@ a:hover {
 
 /*------ Front Gallery --------*/
 
-.front-gallery-item {
-  width: 400px;
-  padding: 5px;
+.front-gallery {
+  float: left;
+  padding: 12px;
+  cursor: pointer;
 }
 
 .text-brand {

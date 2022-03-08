@@ -7,7 +7,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -50,11 +49,9 @@ class ContactFormType extends AbstractType
                     'rows' => 8
                 ]
             ])
-            ->add('robot', CheckboxType::class, [
-                'mapped' => false,
-                'required' => true,
-                'data' => false,
-                'label' => 'Je ne suis pas un robot'
+            ->add('captcha', Recaptcha3Type::class, [
+                'constraints' => new Recaptcha3(),
+                'action_name' => 'homepage'
             ])
         ;
     }

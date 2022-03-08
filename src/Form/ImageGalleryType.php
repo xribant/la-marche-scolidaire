@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\ImageGallery;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -19,6 +20,17 @@ class ImageGalleryType extends AbstractType
                 'required' => true,
                 'attr' => [
                     'placeholder' => 'Titre de la galerie',
+                    'class' => 'form-control form-control-lg form-control-a'
+                ]
+            ])
+            ->add('description', CKEditorType::class, [
+                'label' => false,
+                'required' => false,
+                'config' => [
+                    'toolbar' => 'full'
+                ],
+                'attr' => [
+                    'placeholder' => 'Description',
                     'class' => 'form-control form-control-lg form-control-a'
                 ]
             ])
